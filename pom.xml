@@ -9,12 +9,11 @@
     <name>Morphia Reproducer project</name>
     <url>https://github.com/MorphiaOrg/morphia</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <morphia.version>1.5.8</morphia.version>
-        <slf4j.version>1.7.25</slf4j.version>
-    </properties>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+    </parent>
 
     <build>
         <plugins>
@@ -30,28 +29,32 @@
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
+        <!-- mongo db -->
         <dependency>
             <groupId>dev.morphia.morphia</groupId>
             <artifactId>core</artifactId>
-            <version>${morphia.version}</version>
+            <version>1.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-legacy</artifactId>
+            <version>4.1.0</version>
         </dependency>
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>4.1.0</version>
         </dependency>
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
-        <dependency>
-            <groupId>dev.morphia.morphia</groupId>
-            <artifactId>core</artifactId>
-            <version>${morphia.version}</version>
-            <classifier>tests</classifier>
-            <scope>test</scope>
+            <groupId>de.flapdoodle.embed</groupId>
+            <artifactId>de.flapdoodle.embed.mongo</artifactId>
+            <version>2.2.0</version>
         </dependency>
     </dependencies>
+
+
 </project>
